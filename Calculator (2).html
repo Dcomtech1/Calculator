@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Calculator.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" placeholder="0" id="output-screen">
+        <button onclick="Clear()">CL</button>
+        <button onclick="del()">DEL</button>
+        <br>
+        <button onclick="on()">AC</button>
+        <button onclick="display('%')">%</button>
+        <button onclick="display('/')">/</button>
+        <button onclick="Sine()" id="sine">Sine</button>
+        <button onclick="Cos()" id="cos">Cos</button>
+        <button onclick="Tan()" id="tan">Tan</button>
+        <button onclick="Log()" id="log">Log</button>
+        <button onclick="sqrt()">√</button>
+        <button onclick="e()">e^x</button>
+        <button onclick="sqr()">sqr</button>
+        <button onclick="pi()" onkeydown='display("π")'>π</button>
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button onclick="display('*')">*</button>
+        <button onclick="display('4')">4</button>
+        <button onclick="display('5')">5</button>
+        <button onclick="display('6')">6</button>
+        <button onclick="display('-')">-</button>
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2')">2</button>
+        <button onclick="display('3')">3</button>
+        <button onclick="display('+')">+</button>
+        <button onclick="display('.')">.</button>
+        <button onclick="display('0')">0</button>
+        <button onclick="Calculate()" class="equal">=</button>
+        
+        </div>
+    </div> 
+   
+
+    <script>
+
+
+        let outputScreen = document.getElementById("output-screen");
+
+        function display(num){
+            outputScreen.value += num;
+        }
+        function Calculate(){
+           try{
+            outputScreen.value= eval(outputScreen.value)
+           }
+           catch(err)
+           {
+               alert("Invalid")
+           }
+        }
+        function Clear(){
+            outputScreen.value = "";
+        }
+        function del(){
+            outputScreen.value = outputScreen.value.slice(0,-1);
+        }
+
+        function Sine() {
+
+            var num = outputScreen.value
+           sineCalc =  Math.sin(num)
+
+           outputScreen.value = sineCalc
+        }
+
+        function Cos() {
+
+            var num1 = outputScreen.value
+            cosCalc =  Math.cos(num1)
+
+            outputScreen.value = cosCalc
+         }
+
+         function Tan() {
+             var num2 = outputScreen.value
+             tanCalc = Math.tan(num2)
+
+             outputScreen.value = tanCalc
+         }
+
+         function Log() {
+             var num3 = outputScreen.value
+             logCalc = Math.log10(num3)
+
+             outputScreen.value = logCalc
+
+
+         }
+
+         function sqrt() {
+             var num4 = outputScreen.value
+             sqrtCalc = Math.sqrt(num4)
+
+             outputScreen.value = sqrtCalc
+         }
+
+         function e() {
+             var num5 = outputScreen.value
+             eCalc = Math.exp(num5)
+             outputScreen.value = eCalc
+         }
+
+         function sqr() {
+             var num6 = outputScreen.value
+             sqrCalc = outputScreen.value * outputScreen.value
+             outputScreen.value = sqrCalc
+         }
+
+         function pi () {
+             var num7 = outputScreen.value
+             piCalc = outputScreen.value * 3.142
+             outputScreen.value = piCalc
+         }
+
+// function Sine() {
+
+// var num = outputScreen.value
+// sineCalc =  Math.sin(num)
+
+// outputScreen.value = sineCalc
+// }
+
+
+           
+    </script>
+</body>
+</html>
